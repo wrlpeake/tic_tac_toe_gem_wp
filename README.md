@@ -6,11 +6,11 @@ This gem contains the game logic to play a game of tic-tac-toe on a 3X3 board wi
 
 Install the gem and add to the application's Gemfile by executing:
 
-    `$ bundle add tic_tac_toe_wp`
+    $ bundle add tic_tac_toe_wp
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    `$ gem install tic_tac_toe_wp`
+    $ gem install tic_tac_toe_wp
 
 ## Usage
 
@@ -18,18 +18,18 @@ Once you have installed the gem, you can initialize a new game by creating an in
 
 This will create a game 'board' by initializing an array contains the integers 1-9. You will then have access to the following methods to implement the game logic:
 
-- create_player(marker)
-- mark_game_board(marker, position)
-- is_there_a_winner?
-- validate_human_selection(position)
-- get_first_spot_available
-- check_board_horizontally?
-- check_board_vertically?
-- check_board_diagonally?
-- check_diagonal_left_to_right?
-- check_diagonal_right_to_left?
-- get_game_board
-- get_available_positions
+- `create_player(marker)`
+- `mark_game_board(marker, position)`
+- `is_there_a_winner?`
+- `validate_human_selection(position)`
+- `get_first_spot_available`
+- `check_board_horizontally?`
+- `check_board_vertically?`
+- `check_board_diagonally?`
+- `check_diagonal_left_to_right?`
+- `check_diagonal_right_to_left?`
+- `get_game_board`
+- `get_available_positions`
 
 ## Development
 
