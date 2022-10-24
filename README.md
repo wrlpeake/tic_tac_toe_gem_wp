@@ -14,11 +14,10 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-Once you have installed the gem, you can initialize a new game by creating an instance of `TicTacToeWP::GameLogic.new`, eg `@tictactoe = TicTacToeWP::GameLogic.new`
+Once you have installed the gem, you can initialize a new game by creating an instance of `TicTacToeWP::GameLogic.new(player_one_marker, player_two_marker)`, eg `@tictactoe = TicTacToeWP::GameLogic.new('X', 'O')`
 
-This will create a game 'board' by initializing an array contains the integers 1-9. You will then have access to the following methods to implement the game logic:
+This will create a game 'board' by initializing an array contains the integers 1-9. It will also initialize player one and player two with the markers you specify in the new game assignment above. You will then have access to the following methods to implement the game logic:
 
-- `create_player(marker)`
 - `mark_game_board(marker, position)`
 - `is_there_a_winner?`
 - `validate_human_selection(position)`

@@ -4,7 +4,7 @@ require "stringio"
 
 RSpec.describe TicTacToeWP::GameLogic do
   before(:each) do
-    @tic_tac_toe_wp = TicTacToeWP::GameLogic.new
+    @tic_tac_toe_wp = TicTacToeWP::GameLogic.new('X', 'O')
   end
 
   it "has a version number" do
@@ -121,10 +121,23 @@ RSpec.describe TicTacToeWP::GameLogic do
     expect(validation_code).to eql 0
   end
 
-  it "create_player() should initialize an instance of the player class, with the marker as an attribute" do
+  it "should keep track of the positions that are available as the game progresses" do
+    position = 9
     marker = "X"
-    @player_one = @tic_tac_toe_wp.create_player(marker)
+    @tic_tac_toe_wp.mark_game_board(marker, position)
 
-    expect(@player_one.marker).to eql marker
+    expect(@tic_tac_toe_wp.get_available_positions).to eql [1, 2, 3, 4, 5, 6, 7, 8]
+  end
+
+  it "should return the first available spot on the board" do
+    expect(@tic_tac_toe_wp.get_first_spot_available).to eql 1
+  end
+
+  it "should check that if a position has been taken, it should no longer be available" do
+    position = 6
+    marker = "O"
+    @tic_tac_toe_wp.mark_game_board(marker, position)
+
+    expect(@tic_tac_toe_wp.position_available?(position)).to be false
   end
 end

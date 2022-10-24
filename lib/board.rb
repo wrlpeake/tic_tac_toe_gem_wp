@@ -11,19 +11,7 @@ class Board
     @game_board[position - 1] = player
   end
 
-  def list_available_positions
-    @game_board.reject { |pos| pos =~ /[XO]/ }
-  end
-
-  def position_available?(position)
-    list_available_positions.include? position
-  end
-
   def load_game_board
     @game_board
-  end
-
-  def find_first_spot_available
-    list_available_positions[0]
   end
 end
