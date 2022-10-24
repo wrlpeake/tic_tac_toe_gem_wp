@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tic_tac_toe_wp (0.1.1)
+    tic_tac_toe_wp (0.1.2)
       guard-rspec
       rspec
       rubocop
