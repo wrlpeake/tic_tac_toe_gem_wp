@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary = "The game logic for the a tic-tac-toe game on a 3X3 board"
   spec.homepage = "https://github.com/wrlpeake/tic_tac_toe_gem_wp"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.1.2"
+  spec.required_ruby_version = ">= 3.1"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/wrlpeake/tic_tac_toe_gem_wp"
@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rspec"
   spec.add_dependency "rubocop"
   spec.add_dependency "simplecov"
+  spec.metadata["rubygems_mfa_required"] = "true"
 end

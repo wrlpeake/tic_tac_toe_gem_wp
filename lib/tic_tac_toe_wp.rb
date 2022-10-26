@@ -92,19 +92,15 @@ module TicTacToeWP
     end
 
     def get_available_positions
-      get_game_board.reject { |pos| (pos == @player_one_marker || pos== @player_two_marker)}
+      get_game_board.reject { |pos| [@player_one_marker, @player_two_marker].include?(pos) }
     end
 
     def position_available?(position)
       get_available_positions.include? position
     end
 
-    def create_player_one(marker)
-      Player.new(@player_one_marker)
-    end
-
-    def create_player_two(marker)
-      Player.new(@player_two_marker)
+    def create_player(marker)
+      Player.new(marker)
     end
   end
 end
