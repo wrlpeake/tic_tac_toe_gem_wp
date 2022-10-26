@@ -12,6 +12,9 @@ Naming/AccessorMethodName:
 Naming/PredicateName:
   Severity: info
 
+Metrics/BlockLength:
+  Severity: info
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
