@@ -8,26 +8,6 @@ RSpec.describe Board do
     @board = Board.new
   end
 
-  it "should return the first available spot on the board" do
-    expect(@board.find_first_spot_available).to eql 1
-  end
-
-  it "should keep track of the positions that are available as the game progresses" do
-    position = 9
-    player = "X"
-    @board.update_game_board(player, position)
-
-    expect(@board.list_available_positions).to eql [1, 2, 3, 4, 5, 6, 7, 8]
-  end
-
-  it "should check that if a position has been taken, it should no longer be available" do
-    position = 6
-    player = "O"
-    @board.update_game_board(player, position)
-
-    expect(@board.position_available?(position)).to be false
-  end
-
   it "should return the game board" do
     expect(@board.load_game_board).to eql [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end

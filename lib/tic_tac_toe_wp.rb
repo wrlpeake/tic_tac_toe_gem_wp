@@ -6,8 +6,10 @@ require_relative "player"
 
 module TicTacToeWP
   class GameLogic
-    def initialize(board: Board)
-      @board = board.new
+    def initialize(player_one_marker, player_two_marker)
+      @board = Board.new
+      @player_one_marker = player_one_marker
+      @player_two_marker = player_two_marker
     end
 
     def is_there_a_winner?
@@ -65,15 +67,11 @@ module TicTacToeWP
     end
 
     def get_first_spot_available
-      @board.find_first_spot_available
+      get_available_positions[0]
     end
 
     def get_game_board
       @board.load_game_board
-    end
-
-    def get_available_positions
-      @board.list_available_positions
     end
 
     def validate_human_player_selection(position)
@@ -81,7 +79,7 @@ module TicTacToeWP
       integer_error = 1
       position_error = 2
       return integer_error if (position >= 1 && position <= 9) == false
-      return position_error if @board.position_available?(position) == false
+      return position_error if position_available?(position) == false
 
       validated
     end
@@ -93,8 +91,20 @@ module TicTacToeWP
       option
     end
 
-    def create_player(marker)
-      Player.new(marker)
+    def get_available_positions
+      get_game_board.reject { |pos| (pos == @player_one_marker || pos== @player_two_marker)}
+    end
+
+    def position_available?(position)
+      get_available_positions.include? position
+    end
+
+    def create_player_one(marker)
+      Player.new(@player_one_marker)
+    end
+
+    def create_player_two(marker)
+      Player.new(@player_two_marker)
     end
   end
 end
