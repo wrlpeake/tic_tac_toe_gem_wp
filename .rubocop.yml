@@ -1,5 +1,16 @@
 AllCops:
   TargetRubyVersion: 3.1
+  SuggestExtensions: false
+  NewCops: enable
+
+Style/Documentation:
+  Severity: info
+
+Naming/AccessorMethodName:
+  Severity: info
+
+Naming/PredicateName:
+  Severity: info
 
 Style/StringLiterals:
   Enabled: true
