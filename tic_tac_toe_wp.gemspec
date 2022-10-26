@@ -32,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rspec"
   spec.add_dependency "rubocop"
   spec.add_dependency "simplecov"
+  spec.metadata["rubygems_mfa_required"] = "true"
 end
