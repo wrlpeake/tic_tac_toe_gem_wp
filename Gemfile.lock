@@ -1,3 +1,12 @@
+PATH
+  remote: .
+  specs:
+    tic_tac_toe_wp (0.1.2)
+      guard-rspec
+      rspec
+      rubocop
+      simplecov
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,6 +98,6 @@ DEPENDENCIES
   rspec (~> 3.0)
   rubocop (~> 1.21)
   tic_tac_toe_wp!
-  
+
 BUNDLED WITH
    2.3.20
