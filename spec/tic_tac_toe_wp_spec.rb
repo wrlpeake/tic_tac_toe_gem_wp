@@ -4,7 +4,7 @@ require "stringio"
 
 RSpec.describe TicTacToeWP::GameLogic do
   before(:each) do
-    @tic_tac_toe_wp = TicTacToeWP::GameLogic.new('X', 'O')
+    @tic_tac_toe_wp = TicTacToeWP::GameLogic.new("X", "O")
   end
 
   it "has a version number" do
@@ -139,5 +139,12 @@ RSpec.describe TicTacToeWP::GameLogic do
     @tic_tac_toe_wp.mark_game_board(marker, position)
 
     expect(@tic_tac_toe_wp.position_available?(position)).to be false
+  end
+
+  it "should create a player with a marker as an attribute" do
+    marker = "£"
+    @player_one = @tic_tac_toe_wp.create_player(marker)
+
+    expect(@player_one.marker).to eql marker
   end
 end
