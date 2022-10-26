@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "tic_tac_toe_wp"
-
 class Board
   def initialize
     @game_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
