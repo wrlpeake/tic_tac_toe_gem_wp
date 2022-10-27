@@ -147,4 +147,30 @@ RSpec.describe TicTacToeWP::GameLogic do
 
     expect(@player_one.marker).to eql marker
   end
+
+  it "should return false if the marker chosen by the user is a number" do
+    marker = "1"
+
+    expect(@tic_tac_toe_wp.validate_marker?(marker)).to equal false
+  end
+
+  it "should return true if the the marker chosen by the user is not a number" do
+    marker = "£"
+
+    expect(@tic_tac_toe_wp.validate_marker?(marker)).to equal true
+  end
+
+  it "should return true if duplicate player markers are selected" do
+    player_one_marker = "Y"
+    player_two_marker = "Y"
+
+    expect(@tic_tac_toe_wp.duplicate_marker?(player_one_marker, player_two_marker)).to be true
+  end
+
+  it "should return false if duplicate player markers are selected" do
+    player_one_marker = "Y"
+    player_two_marker = "X"
+
+    expect(@tic_tac_toe_wp.duplicate_marker?(player_one_marker, player_two_marker)).to be false
+  end
 end
