@@ -102,5 +102,13 @@ module TicTacToeWP
     def create_player(marker)
       Player.new(marker)
     end
+
+    def validate_marker?(marker)
+      (marker =~ /[1-9]/).nil?
+    end
+
+    def duplicate_marker?(player_one_marker, player_two_marker)
+      player_one_marker == player_two_marker
+    end
   end
 end
